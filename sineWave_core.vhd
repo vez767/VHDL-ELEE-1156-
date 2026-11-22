@@ -75,7 +75,7 @@ begin
 	
 	elsif(rising_edge(clk)) then
 		
-		if clock_edge_counter >= period then
+		if clock_edge_counter >= shift_right(period, 8) then
 			clock_edge_counter <= (others => '0');
 			rom_address <= rom_address + 1;
 			
